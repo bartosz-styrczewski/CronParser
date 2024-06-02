@@ -1,7 +1,8 @@
-package org.interview;
+package org.interview.croneparser.parser;
 
 /**
- * TODO document me
+ * Tokenizer allows to break strings into tokens with space character as a space-delimiter.
+ * Checks if input is null or empty and trims given string.
  */
 public class Tokenizer {
     private static final String WHITESPACE_REGEX = "\\s+";

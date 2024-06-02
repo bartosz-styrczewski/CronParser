@@ -1,6 +1,8 @@
-package org.interview;
+package org.interview.croneparser.app;
 
 import lombok.extern.java.Log;
+import org.interview.croneparser.parser.CroneParser;
+import org.interview.croneparser.parser.Schedule;
 
 @Log
 public class CronParserApp {
@@ -9,8 +11,8 @@ public class CronParserApp {
         log.info("Crone Parser App running ...");
 
         CroneParser croneParser = new CroneParser();
-        ParsingResult parsingResult = croneParser.parseExpression(args[0]);
-        parsingResult.prettyPrint();
+        Schedule schedule = croneParser.parseExpression(args[0]);
+        schedule.prettyPrint();
 
         log.info("Crone Parser App running shutting down ...");
     }
