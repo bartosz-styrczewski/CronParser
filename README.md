@@ -2,7 +2,7 @@
  Simple command line tool for parsing crone expressions
 ## Prerequisites
 * java21
-* mvn 3.8.x
+* mvn 3.9.x
 ## Test
 `mvn clean test`
 ## Build 
