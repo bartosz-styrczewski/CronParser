@@ -54,4 +54,22 @@ class DayOfWeekTest {
     public void testNonMatchingRanges(String input) {
         assertFalse(DayOfWeek.RANGES_REGEX.matcher(input).matches());
     }
+
+    @ParameterizedTest
+    @ValueSource(strings = {
+            "*"
+    })
+    public void testMatchingAll(String input) {
+        assertTrue(DayOfWeek.ALL_REGEX.matcher(input).matches());
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {
+            "**",
+            "*-*",
+            "*,*"
+    })
+    public void testNonMatchingAll(String input) {
+        assertFalse(DayOfWeek.ALL_REGEX.matcher(input).matches());
+    }
 }

@@ -55,4 +55,22 @@ class MonthTest {
     public void testNonMatchingRanges(String input) {
         assertFalse(Month.RANGES_REGEX.matcher(input).matches());
     }
+
+    @ParameterizedTest
+    @ValueSource(strings = {
+            "*"
+    })
+    public void testMatchingAll(String input) {
+        assertTrue(Month.ALL_REGEX.matcher(input).matches());
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {
+            "**",
+            "*-*",
+            "*,*"
+    })
+    public void testNonMatchingAll(String input) {
+        assertFalse(Month.ALL_REGEX.matcher(input).matches());
+    }
 }

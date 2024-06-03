@@ -42,12 +42,12 @@ class CroneParserTest {
                 .hours(new int[]{2, 3, 4})
                 .daysOfMonth(new int[]{1})
                 .months(new int[]{1})
-                .daysOfWeek(new int[]{1})
+                .daysOfWeek(new int[]{1, 2, 3, 4, 5, 6, 7})
                 .command("/usr/bin/find")
                 .build();
 
         return Stream.of(
-                Arguments.of("1,2 2-4 1 1 1 /usr/bin/find", schedule)
+                Arguments.of("1,2 2-4 1 1 * /usr/bin/find", schedule)
         );
     }
 }

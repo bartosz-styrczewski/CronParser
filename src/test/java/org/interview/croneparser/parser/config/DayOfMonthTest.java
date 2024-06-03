@@ -58,4 +58,21 @@ class DayOfMonthTest {
         assertFalse(DayOfMonth.RANGES_REGEX.matcher(input).matches());
     }
 
+    @ParameterizedTest
+    @ValueSource(strings = {
+            "*"
+    })
+    public void testMatchingAll(String input) {
+        assertTrue(DayOfMonth.ALL_REGEX.matcher(input).matches());
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {
+            "**",
+            "*-*",
+            "*,*"
+    })
+    public void testNonMatchingAll(String input) {
+        assertFalse(DayOfMonth.ALL_REGEX.matcher(input).matches());
+    }
 }

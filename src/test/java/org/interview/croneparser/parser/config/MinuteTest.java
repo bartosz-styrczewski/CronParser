@@ -53,4 +53,22 @@ class MinuteTest {
     public void testNonMatchingRanges(String input) {
         assertFalse(Minute.RANGES_REGEX.matcher(input).matches());
     }
+
+    @ParameterizedTest
+    @ValueSource(strings = {
+            "*"
+    })
+    public void testMatchingAll(String input) {
+        assertTrue(Minute.ALL_REGEX.matcher(input).matches());
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {
+            "**",
+            "*-*",
+            "*,*"
+    })
+    public void testNonMatchingAll(String input) {
+        assertFalse(Minute.ALL_REGEX.matcher(input).matches());
+    }
 }
