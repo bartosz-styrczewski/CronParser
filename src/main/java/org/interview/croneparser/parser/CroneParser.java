@@ -50,8 +50,8 @@ public class CroneParser {
     }
 
     /**
-     * The method for a given expression filters the provided configuration based on regex patterns
-     * and uses the found implementation of ScheduleDataProducer to supply data to the scheduler.
+     * This method for a given expression filters the provided configuration based on regex patterns
+     * and uses found implementation of ScheduleDataProducer to supply data to the scheduler.
      */
     private static int[] getDataFromProducer(String expression, Map<Pattern, ScheduleDataProducer> config) {
         return config.entrySet().stream()
