@@ -14,6 +14,6 @@ public class CronParserApp {
         Schedule schedule = croneParser.parseExpression(args[0]);
         schedule.prettyPrint();
 
-        log.info("Crone Parser App running shutting down ...");
+        log.info("Crone Parser App shutting down ...");
     }
 }
