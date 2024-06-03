@@ -8,4 +8,7 @@
 ## Build 
 `mvn clean package`
 ## Run
-`java -jar CronParser-0.1-SNAPSHOT.jar "1,2 2-4 1,2 1 * /usr/bin/find"`
+
+`java -jar target\CronParser-0.1-SNAPSHOT.jar "0,2 0-5 1,2 1 * /usr/bin/find"`
+
+> **_NOTE:_** for unix system change path separator
