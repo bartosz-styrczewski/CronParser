@@ -3,9 +3,8 @@ package org.interview.croneparser.parser.config;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import java.util.regex.Pattern;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class DayOfMonthTest {
 
@@ -14,6 +13,7 @@ class DayOfMonthTest {
             "1",
             "5",
             "31",
+            "1,2",
             "1,7",
             "1,5,31"
     })

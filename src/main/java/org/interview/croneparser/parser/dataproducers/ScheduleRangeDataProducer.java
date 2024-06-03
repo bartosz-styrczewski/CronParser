@@ -8,7 +8,10 @@ public class ScheduleRangeDataProducer implements ScheduleDataProducer{
     public int[] getScheduleData(String expression) {
 
         String[] range = expression.split(DASH);
-        return IntStream.range(Integer.parseInt(range[0]), Integer.parseInt(range[1]) + 1)
+        return IntStream.range(
+                        Integer.parseInt(range[0]),
+                        Integer.parseInt(range[1]) + 1
+                )
                 .toArray();
     }
 }

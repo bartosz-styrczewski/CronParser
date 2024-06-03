@@ -14,6 +14,7 @@ class HourTest {
             "12",
             "23",
             "0,23",
+            "1,2",
             "0,12,23"
     })
     public void testMatchingValues(String input) {

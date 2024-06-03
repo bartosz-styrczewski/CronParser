@@ -14,7 +14,7 @@ public interface Minute {
      * <p>
      * e.g. `12`, `0,34,59`
      */
-    Pattern VALUES_REGEX = Pattern.compile("[0-5][0-9]?(,[0-5][0-9])*");
+    Pattern VALUES_REGEX = Pattern.compile("[0-5][0-9]?(,[0-5][0-9]?)*");
 
     /**
      * Regex matching range of values

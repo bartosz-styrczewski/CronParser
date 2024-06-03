@@ -1,6 +1,8 @@
 package org.interview.croneparser.parser;
 
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.extern.java.Log;
 
 import java.util.Arrays;
 
@@ -8,6 +10,8 @@ import java.util.Arrays;
  * Result of expression parsing. Able of printing result in human-readable form.
  */
 @Builder
+@EqualsAndHashCode
+@Log
 public class Schedule {
 
     private int[] minutes;
@@ -18,17 +22,30 @@ public class Schedule {
     private String command;
 
     public void prettyPrint() {
-        System.out.println(getPrettyString());
+        log.info(getPrettyString());
     }
 
     protected String getPrettyString() {
 
         return new StringBuilder()
+                .append("\n")
                 .append(String.format("%-14s", "minute"))
                 .append(getValuesAsString(minutes))
                 .append("\n")
                 .append(String.format("%-14s", "hour"))
                 .append(getValuesAsString(hours))
+                .append("\n")
+                .append(String.format("%-14s", "day of month"))
+                .append(getValuesAsString(daysOfMonth))
+                .append("\n")
+                .append(String.format("%-14s", "month"))
+                .append(getValuesAsString(months))
+                .append("\n")
+                .append(String.format("%-14s", "day of week"))
+                .append(getValuesAsString(daysOfWeek))
+                .append("\n")
+                .append(String.format("%-14s", "command"))
+                .append(command)
                 .toString();
     }
 
